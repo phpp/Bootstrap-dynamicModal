@@ -1,0 +1,25 @@
+{
+"name": "dynamicModal",
+"title": "Bootstrap dynamicModal Plugin",
+"description": "dynamicModal is a plugin that dynamically generates the modals with Bootstrap",
+"keywords": [
+	"jquery",
+	"dynamic modal",
+	"bootstrap",
+	"modal"
+	],
+"version": "0.1",
+"author": {
+	"name": "Walid Awad",
+	"url": "http://www.php-programmierer.at"
+},
+"licenses": [{
+	"type": "MIT",
+	"url": "http://www.opensource.org/licenses/mit-license.php"
+	}],
+"bugs": "https://github.com/phpp/Bootstrap-dynamicModal/issues",
+"homepage": "http://php-programmierer.at/en/download/bootstrap-dynamicmodal-plugin",
+"docs": "http://php-programmierer.at/en/javascript/bootstrap-dynamicmodal-plugin",
+"download": "https://github.com/phpp/Bootstrap-dynamicModal/archive/master.zip",
+"demo": "http://php-programmierer.at/demos/dynamicModal/"
+}
