@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery Bootstrap dynamicModal</title>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="css/bootstrap.dynamicModal.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>Simple Modal</h2>
+                    <p> Here is an example for a Bootstrap modal with content and cancel button:</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#simple_modal">Launch simple Modal</button>
+                </div>
+           </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>Multi buttons Modal</h2>
+                    <p>The following example shows how the modal can be generated with several buttons and contents.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#multi_buttons_modal">Launch multi-buttons Modal</button>
+                </div>
+           </div>
+             <div class="row">
+                <div class="col-xs-6">
+                    <h2>Bootstrap Date Time Picker Modal</h2>
+                    <p></p>
+                    <div class="form-group">
+                       <input name="datetime_field" id="datetime_field" type="text" maxlength="100" class="form-control" data-toggle="modal" data-target="#datetime_modal">
+                    </div>
+                </div>
+           </div>          
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="js/bootstrap.dynamicModal.js"></script>
+        <script>
+                $(document).ready(function() {
+                    // Simple Modal
+                    $('body').dynamicModal({
+                        id:'simple_modal',
+                        cls:'simple_modal',
+                        title:'Simple modal',
+                        content:'<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>',
+                        buttons:[
+                                    {   
+                                        cancel:true,
+                                        text:'Cancel',
+                                        id:'cancel',
+                                        cls:'btn-default'
+                                    }
+                                ]
+                    })
+                    
+                    // Multi-Buttons
+                    $('body').dynamicModal({
+                        id:'multi_buttons_modal',
+                        cls:'multi_buttons_modal',
+                        title:'Multi-Buttons modal',
+                        content:'<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>',
+                        buttons:[
+                                    {   
+                                        cancel:true,
+                                        text:'Cancel',
+                                        id:'cancel',
+                                        cls:'btn-default'
+                                    },
+                                   
+                                     {   
+                                        text:'Primary',
+                                        id:'primary',
+                                        cls:'btn-primary'
+                                    } ,
+                                     {   
+                                        text:'Success',
+                                        id:'success',
+                                        cls:'btn-success'
+                                    },
+                                     {   
+                                        text:'Info',
+                                        id:'info',
+                                        cls:'btn-info'
+                                    },
+                                    
+                                     {   
+                                        text:'Warning',
+                                        id:'warning',
+                                        cls:'btn-warning'
+                                    }
+                                    ,
+                                    
+                                     {   
+                                        text:'Danger',
+                                        id:'danger',
+                                        cls:'btn-danger'
+                                    }
+                      ]
+                    })
+                    
+                    $('#primary, #success, #info, #warning, #danger').click(function(){
+                      alert(this.id+'-button');
+                      $('.modal').modal('hide');
+                    })
+                    
+                    
+                    // Datetiemepicker Modal
+                    $('body').dynamicModal({
+                        id:'datetime_modal',
+                        cls:'datetime_modal',
+                        title:'Datetime Modal',
+                        
+                        datetimepicker:{
+                            language:'en',
+                            format: 'd/m/yyyy h:i:s ',
+                            minView:0,
+                            maxView:1,
+                            showMeridian: 1,
+                            linkField:'datetime_field',
+                            linkFormat:'d/m/yyyy h:i:s'
+                        },
+                        buttons:[{   
+                                        cancel:true,
+                                        text:'Cancel',
+                                        id:'cancel',
+                                        cls:'btn-default'
+                                 }]
+                    })
+                    
+                    
+                });
+        </script>
+    </body>
+</html>
